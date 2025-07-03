@@ -5,7 +5,7 @@ import miArray from "./components/ArrayTeams";
 function App() {
   return (
     <div className="md:bg-[#111827] p-2 md:mx-70">
-      <div className="flex justify-end mr-12">
+      <div className="flex justify-end mr-10">
         <img src="/images/sol.png" alt="sol" className="w-8 hidden md:block" />
       </div>
       <div className="flex justify-end">
@@ -22,21 +22,17 @@ function App() {
       </div>
 
       <div className="md:bg-[#111827] grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-6 p-4">
-        {miArray.map((persona, index) => {
-          let espaciado = "";
-          if (index % 2 === 1) espaciado += " mt-6";
-          if (index % 3 === 1) espaciado += " md:mt-10";
-
-          return (
-            <TeamCard
-              key={index}
-              name={persona.name}
-              role={persona.role}
-              image={persona.image}
-              espaciado={espaciado} // 👈 le pasas esta clase al componente
-            />
-          );
-        })}
+        {miArray.map((persona, index) => (
+          <TeamCard
+            key={index}
+            name={persona.name}
+            role={persona.role}
+            image={persona.image}
+            extraClass={`${index % 2 === 1 ? "mt-6" : ""} ${
+              index % 3 === 1 ? "md:mt-10" : ""
+            }`}
+          />
+        ))}
       </div>
     </div>
   );

@@ -22,21 +22,18 @@ function App() {
       </div>
 
       <div className="md:bg-[#111827] grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-6 p-4">
-        {miArray.map((persona, index) => {
-          let espaciado = "";
-          if (index % 2 === 1) espaciado += " mt-6";
-          if (index % 3 === 1) espaciado += " md:mt-10";
-
-          return (
-            <TeamCard
-              key={index}
-              name={persona.name}
-              role={persona.role}
-              image={persona.image}
-              espaciado={espaciado} // 👈 le pasas esta clase al componente
-            />
-          );
-        })}
+        {miArray.map((persona, index) => (
+          <TeamCard
+            key={index}
+            name={persona.name}
+            role={persona.role}
+            image={persona.image}
+            espaciado={espaciado}
+            /* extraClass={`${index % 2 === 1 ? "mt-6" : ""} ${
+              index % 3 === 1 ? "md:mt-10" : ""
+            }`} */
+          />
+        ))}
       </div>
     </div>
   );
