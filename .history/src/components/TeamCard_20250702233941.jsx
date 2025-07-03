@@ -1,0 +1,26 @@
+import React from "react";
+export function TeamCard(props) {
+  return (
+    <div className={`${props.extraClass}`}>
+      <div className="text-black md:text-white md:flex md:items-center md:justify-center gap-2 relative">
+        <img src={props.image} alt={props.name} className="md:w-[200px] w-20" />
+        <span className="absolute right-0 top-1/2 -translate-y-1/2 rotate-90 origin-left text-sm">
+          {props.role}
+        </span>
+      </div>
+      <div className="md:text-white text-center mt-2">
+        <h3 className="font-semibold">{props.name}</h3>
+      </div>
+    </div>
+  );
+}
+
+/* export function TeamCard(props) {
+  return (
+    <div>
+      <h3>{props.name}</h3>
+      <p>{props.role}</p>
+      <img src={props.image} alt={props.name} width="100" />
+    </div>
+  );
+} */

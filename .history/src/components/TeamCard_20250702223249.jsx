@@ -1,0 +1,19 @@
+export function TeamCard(props) {
+  return (
+    <div className={`md:mt-12 ${props.extraClass}`}>
+      <div className="text-black md:text-white md:flex md:items-center md:justify-center gap-2 relative">
+        <img
+          src={props.images}
+          alt={props.name}
+          className="md:w-[200px] w-20"
+        />
+        <span className="absolute right-0 top-1/2 -translate-y-1/2 rotate-90 origin-left text-sm">
+          {props.role}
+        </span>
+      </div>
+      <div className="md:text-white text-center mt-2">
+        <h3 className="font-semibold">{props.name}</h3>
+      </div>
+    </div>
+  );
+}

@@ -1,0 +1,45 @@
+import { TeamCards } from "./components/TeamCard";
+import miArray from "./components/ArrayTeams";
+
+function CardTeams() {
+  return (
+    <div className="md:bg-[#111827] p-2 md:mx-70">
+      <div>
+        <img
+          src="../public/images/sol.png"
+          alt="sol"
+          className="w-8 justify-end"
+        />
+      </div>
+      <div>
+        <img
+          src="../public/images/luna.png"
+          alt="luna"
+          className="w-8 justify-start md:hidden"
+        />
+      </div>
+      <div className="md:text-white text-black text-center md:flex md:justify-between md:mx-12">
+        <h1 className="text-3xl font-bold">The creative crew</h1>
+        <p className="text-[15px] mt-2 max-w-md md:text-md text-wrap text-left m-5">
+          <b>Who we are</b>
+          <br />
+          We are team of creatively diverse, driven, <br /> innovative
+          individuals working in various <br /> locations from the world.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-y-2 items-center justify-center md:ml-15">
+        {miArray.map((persona, index) => (
+          <TeamCards
+            key={index}
+            name={persona.name}
+            role={persona.role}
+            image={persona.image}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default CardTeams;
